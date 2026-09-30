@@ -38,7 +38,9 @@ void loop()
   // ! MOVIMENTAR PERSONAGEM
   if (!gameOver)
   {
-    if (estadoAnteriorCima != estadoBotaoCima)
+    lcd.setCursor(0, estadoPlayer);
+    lcd.print(">");
+    if (estadoBotaoCima != estadoAnteriorCima)
     {
       if (!estadoBotaoCima)
       {
@@ -54,7 +56,7 @@ void loop()
     }
     estadoAnteriorCima = estadoBotaoCima;
 
-    if (estadoAnteriorBaixo != estadoBotaoBaixo)
+    if (estadoBotaoBaixo != estadoAnteriorBaixo)
     {
       if (!estadoBotaoBaixo)
       {
@@ -105,7 +107,7 @@ void loop()
   {
     gameOverTela = true;
     lcd.clear();
-    lcd.setCursor(5, 0);
+    lcd.setCursor(5, 1);
     lcd.print("GAME OVER!");
   }
   else
